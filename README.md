@@ -65,6 +65,7 @@
 5 - As collections e env's para execução no postman estão disponiveis no diretório deste projeto na pasta collections.
 
 OBS: É criado por default um usuário com perfil de Admin, onde o email é user@gmail.com e a senha 1234.
+OBS2: Os endpoints precisam estar autenticados com o token gerado pela rota /users/signin, presente nas collections, ao executar este endpoint ele salvará o token nas env's.
 
 # Testes
 ### Execução dos testes automatizados
