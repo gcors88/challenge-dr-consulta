@@ -58,7 +58,7 @@
 
 2 - Após a execução do comando aguarde a aplicação iniciar, primeiramente será criada a base de dados, após isso as migrations serão geradas e por fim a api ira iniciar.
 
-3 - Quando receber a mensagem no terminal "App running on port 3000".
+3 - Quando receber a mensagem no terminal "App running on port 3000" a api estará rodando.
 
 4 - A api estará acessivel no [Link](http://localhost:3000) e o link do swagger estará disponível [Aqui](http://localhost:3000/api)
 
