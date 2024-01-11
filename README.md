@@ -52,9 +52,9 @@
 ### Uso
 
 1 - Após ter o docker e o docker-compose instalados em sua máquina execute a api executando o comando abaixo no terminal:
-      ```
-        docker-compose up app
-      ```
+  ```sh
+    docker-compose up app
+  ```
 
 2 - Após a execução do comando aguarde a aplicação iniciar, primeiramente será criada a base de dados, após isso as migrations serão geradas e por fim a api ira iniciar.
 
