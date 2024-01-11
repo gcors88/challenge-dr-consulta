@@ -24,7 +24,7 @@
 - **Tecnologias**
   - [NestJs](https://nestjs.com/)
   - [Docker](https://www.docker.com/)
-  - [Spring Boot](https://www.mysql.com/)
+  - [MySql](https://www.mysql.com/)
 
 <hr>
 
