@@ -52,7 +52,7 @@
 ### Uso
 
 1 - Após ter o docker e o docker-compose instalados em sua máquina execute a api executando o comando abaixo no terminal:
-      ```sh
+      ```
         docker-compose up app
       ```
 
