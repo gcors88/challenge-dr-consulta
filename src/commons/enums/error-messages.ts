@@ -1,0 +1,15 @@
+export enum ErrorMessages {
+  INVALID_TOKEN = 'Invalid token',
+  EXPIRED_TOKEN = 'Expired token',
+  USER_NOT_FOUND = 'User not found',
+  COMPANY_NOT_FOUND = 'Company not found',
+  VEHICLE_NOT_FOUND = 'Vehicle not found',
+  INVALID_CREDENTIALS = 'Invalid credentials',
+  USER_ALREADY_EXISTS = 'User already exists',
+  COMPANY_ALREADY_EXISTS = 'Company already exists',
+  VEHICLE_ALREADY_EXISTS = 'Vehicle already exists',
+  THE_VEHICLE_IS_NOT_PARKED = 'The vehicle is not parked',
+  THE_VEHICLE_ALREADY_PARKED = 'The vehicle already parked',
+  USER_NOT_AUTHORIZED_TO_ACCESS_THIS_RESOURCE = 'User not authorized to access this resource',
+  THERE_ARE_NO_MORE_PARKING_SPACES_FOR_THE_TYPE_OF_VEHICLE_REQUESTED = 'There are no more parking spaces for the type of vehicle requested',
+}

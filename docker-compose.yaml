@@ -1,0 +1,80 @@
+version: '3'
+
+volumes:
+  my-db:
+    driver: local  
+
+services:
+  base: &base
+    hostname: base
+    image: parking_management
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_USER: 'me'
+      MYSQL_DATABASE: 'db'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: '1234'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+  app:
+    <<: *base
+    command: /bin/bash -c "npm run db:create && npm run db:migrate && npm run start:dev"
+    env_file:
+      - .env
+    environment:
+      MYSQL_PORT: 3306
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: parking_management
+      PASSWORD_SALT_ROUNDS: 10
+      SECONDS_TO_EXPIRE_TOKEN: 60
+      USER_EMAIL_DEFAULT: 'user@gmail.com'
+      USER_NAME_DEFAULT: 'User'
+      USER_ROLES_DEFAULT: '["ADMIN"]'
+      JWT_SECRET: '4b5e39334349734a2870366c35456c222e2d4c3b7643317d3c7e6e7a71652b2d6f7a44577153367e3c7d415f222a53786371'
+    volumes: 
+      - .:/app  
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db  
+
+  tst:
+    <<: *base
+    command: /bin/bash -c "npm run test"
+    env_file:
+      - .env
+    environment:
+      MYSQL_PORT: 3306
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: parking_management_test
+      PASSWORD_SALT_ROUNDS: 10
+      SECONDS_TO_EXPIRE_TOKEN: 60
+      USER_EMAIL_DEFAULT: 'user@gmail.com'
+      USER_NAME_DEFAULT: 'User'
+      USER_ROLES_DEFAULT: '["ADMIN"]'
+      JWT_SECRET: '4b5e39334349734a2870366c35456c222e2d4c3b7643317d3c7e6e7a71652b2d6f7a44577153367e3c7d415f222a53786371'
+    volumes: 
+      - .:/app  
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db      
+
+  
