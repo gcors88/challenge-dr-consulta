@@ -70,17 +70,17 @@ OBS: É criado por default um usuário com perfil de Admin, onde o email é user
 ### Execução dos testes automatizados
 
 1 - Para execução dos testes automatizados, execute o comando abaixo no terminal para execução do container de testes:
-      ```sh 
-        docker-compose run tst bash
-      ```
+  ```sh 
+    docker-compose run tst bash
+  ```
 2 - Após carregar o container de teste execute os comandos abaixo para criação da base de teste e execução das migrations:
-      ```sh
-        npm run db:create && npm run db:migrate
-      ```
+  ```sh
+    npm run db:create && npm run db:migrate
+  ```
 3 - Por fim uma vez criada a base de dados, execute o comando abaixo para execução dos testes automatizados:
-      ```sh
-        npm run test
-      ```      
+  ```sh
+    npm run test
+  ```      
 OBS: Não foram criados ainda todos os testes de feature/unit os mesmos estão em WIP.
 
 Glauber Oliveira - [Linkedin](https://www.linkedin.com/in/gcolliveira/) - glauber17230@gmail.com 
