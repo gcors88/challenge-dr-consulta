@@ -29,6 +29,7 @@ export class AuthGuard implements CanActivate {
     }
 
     try {
+      this.jwtService.verify(token);
       const { exp: timeToExpireToken, roles } = this.jwtService.decode(token);
 
       if (this.validateIfTokenIsExpired(timeToExpireToken)) {
